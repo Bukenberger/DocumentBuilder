@@ -22,14 +22,14 @@ class JSONBuilder : public IBuilder {
 
 public:
 	JSONBuilder()
-		: _root{ JSONComponent( "root" ) } {
+		: IBuilder{}, _root { JSONComponent( "root" ) } {
 		_stack.push( _root );
 	}
 
-	void BuildBranch( std::string name );
-	void BuildLeaf( std::string name, std::string content );
-	void CloseBranch();
-	IComposite GetDocument();
+	void BuildBranch( std::string name ) override;
+	void BuildLeaf( std::string name, std::string content ) override;
+	void CloseBranch() override;
+	IComposite GetDocument() override;
 };
 
 #endif // !__JSONBUILDER__HPP

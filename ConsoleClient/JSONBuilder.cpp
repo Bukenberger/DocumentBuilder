@@ -7,6 +7,8 @@
 
 #include "JSONBuilder.hpp"
 
+#include <iostream>
+
 void JSONBuilder::BuildBranch( std::string name ) {
 	JSONComponent component( name );
 	_depth++;
@@ -25,5 +27,7 @@ void JSONBuilder::CloseBranch() {
 	}
 }
 IComposite JSONBuilder::GetDocument() {
+	// STUB CODE
+	std::cout << "\nJSONBuilder Class" << std::endl;
 	return _root;
 }

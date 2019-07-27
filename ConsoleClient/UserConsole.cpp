@@ -7,6 +7,16 @@
 
 #include "UserConsole.hpp"
 
+#include <string>
+
+// copy assignment operator
+UserConsole& UserConsole::operator=( const UserConsole& con ) {
+	_branch = con._branch;
+	_leaf = con._leaf;
+
+	return *this;
+}
+
 /* Getters */
 std::string UserConsole::GetBranch() const { 
 	return _branch;

@@ -5,37 +5,46 @@
 	@description: 
 */
 
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+
+// C System libraries
 #include <stdio.h>
 #include <string.h>
 
+// C++ System Libraries
 #include <vector>
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <typeinfo>
 
+// Headers
 #include "IBuilder.hpp"
 #include "UserConsole.hpp"
 #include "Director.hpp"
 #include "JSONBuilder.hpp"
 #include "XMLBuilder.hpp"
 
-// function headers
+// Function declaration headers
 void Usage();
 void InvalidInput();
 void ModeNotSet();
+std::vector< std::string > split( std::string str, std::string sep );
 
 int main() {
 	std::cout << "Document Builder Console Client - Teran Bukenberger\n";
 
 	UserConsole console;
 
-	Director* d = nullptr;
+	Director d;
 
 	bool isSet = false;
 
 	Usage();
 
 	do {
+		std::cout << "> ";
 		// read input into command string
 		std::string command;// = Console.ReadLine().ToLower();
 		std::getline( std::cin, command );
@@ -45,13 +54,7 @@ int main() {
 			c = ::tolower( c );
 		} );
 		
-		std::cout << command;
-
-		//char* pch;
-		std::vector< std::string > _commands; // = command.Split( ":" );
-
-		//pch = strtok( command, ":" );
-
+		std::vector< std::string > _commands = split( command, ":" );
 
 		if (_commands.size() == 1) {
 			if (_commands[0] == "help") {
@@ -62,7 +65,7 @@ int main() {
 			}
 			else if (_commands[0] == "close") {
 				if (isSet) {
-					d->CloseBranch();
+					d.CloseBranch();
 				}
 				else {
 					ModeNotSet();
@@ -70,7 +73,7 @@ int main() {
 			}
 			else if (_commands[0] == "print") {
 				if (isSet) {
-					d->Print();
+					d.Print();
 				}
 				else {
 					ModeNotSet();
@@ -84,12 +87,13 @@ int main() {
 			if (_commands[0] == "mode") {
 				if (_commands[1] == "json") {
 					//d = new JSONBuilder;
-					dynamic_cast< JSONBuilder* >( d );
+					JSONBuilder jsonBuilder;
+					d = Director( new JSONBuilder );
 					isSet = true;
 				}
 				else if (_commands[1] == "xml") {
 					//d = new XMLBuilder;
-					dynamic_cast< XMLBuilder* >( d );
+					d = Director( new XMLBuilder );
 					isSet = true;
 				}
 				else {
@@ -99,7 +103,7 @@ int main() {
 			else if (_commands[0] == "branch") {
 				if (isSet) {
 					console.SetBranch( _commands );
-					d->BuildBranch();
+					d.BuildBranch();
 				}
 				else {
 					ModeNotSet();
@@ -113,7 +117,7 @@ int main() {
 			if (_commands[0] == "leaf") {
 				if (isSet) {
 					console.SetLeaf( _commands );
-					d->BuildLeaf();
+					d.BuildLeaf();
 				}
 				else {
 					ModeNotSet();
@@ -126,6 +130,16 @@ int main() {
 		else {
 			InvalidInput();
 		}
+
+		/* STUB CODE */
+		std::cout << "Formatted command: " << command << std::endl;
+		if (_commands.size() > 0)
+			std::cout << "First arg: " << _commands[0] << std::endl;
+		if (_commands.size() > 1)
+			std::cout << "Second arg: " << _commands[1] << std::endl;
+		if (_commands.size() > 2)
+			std::cout << "Third arg: " << _commands[2] << std::endl;
+
 	} while (true);
 
 	return 0;
@@ -167,9 +181,26 @@ void Usage() {
 } // end Usage()
 
 void InvalidInput() {
-	std::cout << "Invalid input. For Usage, type 'Help'";
+	std::cout << "Invalid input. For Usage, type 'Help'\n";
 } // end InvalidInput()
 
 void ModeNotSet() {
-	std::cout << "Error. Mode has not been set. For usage, type 'Help'";
+	std::cout << "Error. Mode has not been set. For usage, type 'Help'\n";
 } // end ModeNotSet()
+
+std::vector< std::string > split( std::string str, std::string sep ) {
+
+	char* cstr = const_cast< char* >( str.c_str() );
+	char* current;
+	std::vector<std::string> arr;
+	current = strtok( cstr, sep.c_str() );
+
+	while (current != nullptr) {
+		arr.push_back( current );
+		current = strtok( nullptr, sep.c_str() );
+	}
+
+	return arr;
+} // end split()
+
+#endif // !_CRT_SECURE_NO_WARNINGS

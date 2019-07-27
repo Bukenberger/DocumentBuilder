@@ -19,6 +19,11 @@ class UserConsole {
 	std::pair< std::string, std::string > _leaf;
 
 public:
+	/***** CONSTRUCTORS *****/
+
+	// copy assignment operator
+	UserConsole& operator=( const UserConsole& );
+
 	/***** GETTERS & SETTERS ******/
 
 	std::string GetBranch() const;

@@ -16,12 +16,18 @@ class Director : public IDirector {
 
 	/***** Data Members *****/
 	UserConsole _console;
-	IBuilder _builder;
+	IBuilder* _builder = nullptr;
 
 public:
-	/***** Constructor *****/
-	Director(IBuilder builder)
+	/***** Constructors *****/
+	Director() = default;
+
+	// one arg
+	Director(IBuilder* builder)
 		: _builder{ builder } {}
+
+	// copy constructor 
+	Director( const Director& d );
 
 	/***** Methods *****/
 	void BuildBranch();
@@ -30,4 +36,4 @@ public:
 	void Print();
 };
 
-#endif
+#endif // !__DIRECTOR__HPP

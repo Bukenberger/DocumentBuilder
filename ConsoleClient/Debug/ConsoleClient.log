@@ -1,2 +1,2 @@
 ﻿  ConsoleClient_main.cpp
-  ConsoleClient.vcxproj -> C:\Users\Teran\Desktop\C++ Design Pattern\XML-JSON-Builder\Debug\ConsoleClient.exe
+LINK : fatal error LNK1168: cannot open C:\Users\Teran\Desktop\C++ Design Pattern\XML-JSON-Builder\Debug\ConsoleClient.exe for writing

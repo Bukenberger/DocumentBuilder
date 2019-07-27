@@ -9,6 +9,7 @@
 #define __IBUILDER__HPP
 
 #include <string>
+#include <iostream>
 
 #include "IComposite.hpp"
 
@@ -17,7 +18,9 @@ public:
 	virtual void BuildBranch( std::string name ) {}
 	virtual void BuildLeaf( std::string name, std::string content ) {}
 	virtual void CloseBranch() {}
-	virtual IComposite GetDocument() {};
+	virtual IComposite GetDocument() = 0;
+
+	virtual ~IBuilder() {}
 };
 
-#endif // !__IBUILDER_HPP
+#endif // !__IBUILDER__HPP
