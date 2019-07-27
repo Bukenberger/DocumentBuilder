@@ -7,7 +7,7 @@
 
 #include "XMLComponent.hpp"
 
-void XMLComponent::AddChild( XMLComponent child ) {
+void XMLComponent::AddChild( IComposite& child ) {
 	_children.push_back( child );
 } // end AddChild()
 

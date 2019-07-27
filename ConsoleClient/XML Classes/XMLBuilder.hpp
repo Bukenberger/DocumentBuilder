@@ -11,7 +11,7 @@
 #include <string>
 #include <stack>
 
-#include "IBuilder.hpp"
+#include "..\IBuilder.hpp"
 #include "XMLComponent.hpp"
 #include "XMLLeaf.hpp"
 
@@ -26,10 +26,10 @@ public:
 		_stack.push( _root );
 	}
 
-	void BuildBranch( std::string name );
-	void BuildLeaf( std::string name, std::string content );
-	void CloseBranch();
-	IComposite GetDocument();
+	void BuildBranch( std::string name ) override;
+	void BuildLeaf( std::string name, std::string content ) override;
+	void CloseBranch() override;
+	IComposite GetDocument() override;
 };
 
 #endif // !__XMLBUILDER__HPP

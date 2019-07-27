@@ -17,14 +17,13 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
-#include <typeinfo>
 
 // Headers
 #include "IBuilder.hpp"
 #include "UserConsole.hpp"
 #include "Director.hpp"
-#include "JSONBuilder.hpp"
-#include "XMLBuilder.hpp"
+#include "JSON Classes\JSONBuilder.hpp"
+#include "XML Classes\XMLBuilder.hpp"
 
 // Function declaration headers
 void Usage();
@@ -46,7 +45,7 @@ int main() {
 	do {
 		std::cout << "> ";
 		// read input into command string
-		std::string command;// = Console.ReadLine().ToLower();
+		std::string command;
 		std::getline( std::cin, command );
 
 		// convert all characters in command string to lowercase
@@ -86,13 +85,10 @@ int main() {
 		else if (_commands.size() == 2) {
 			if (_commands[0] == "mode") {
 				if (_commands[1] == "json") {
-					//d = new JSONBuilder;
-					JSONBuilder jsonBuilder;
 					d = Director( new JSONBuilder );
 					isSet = true;
 				}
 				else if (_commands[1] == "xml") {
-					//d = new XMLBuilder;
 					d = Director( new XMLBuilder );
 					isSet = true;
 				}

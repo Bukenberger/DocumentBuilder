@@ -30,9 +30,9 @@ public:
 	Director( const Director& d );
 
 	/***** Methods *****/
-	void BuildBranch();
-	void BuildLeaf();
-	void CloseBranch();
+	void BuildBranch() override;
+	void BuildLeaf() override;
+	void CloseBranch() override;
 	void Print();
 };
 

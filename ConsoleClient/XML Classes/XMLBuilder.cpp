@@ -8,6 +8,9 @@
 #include "XMLBuilder.hpp"
 
 void XMLBuilder::BuildBranch( std::string name ) {
+	// STUB CODE
+	std::cout << "\nXMLBuilder Class" << std::endl;
+
 	XMLComponent component( name );
 	_depth++;
 
@@ -15,15 +18,23 @@ void XMLBuilder::BuildBranch( std::string name ) {
 	_stack.push( component );
 }
 void XMLBuilder::BuildLeaf( std::string name, std::string content ) {
+	// STUB CODE
+	std::cout << "\nXMLBuilder Class" << std::endl;
+
 	XMLLeaf leaf( name, content );
 	_stack.top().AddChild( leaf );
 }
 void XMLBuilder::CloseBranch() {
+	// STUB CODE
+	std::cout << "\nXMLBuilder Class" << std::endl;
+
 	_depth--;
 	if (_stack.size() > 1) {
 		_stack.pop();
 	}
 }
 IComposite XMLBuilder::GetDocument() {
+	// STUB CODE
+	std::cout << "\nXMLBuilder Class" << std::endl;
 	return _root;
 }

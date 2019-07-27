@@ -11,7 +11,7 @@
 #include <string>
 #include <list>
 
-#include "IComposite.hpp"
+#include "..\IComposite.hpp"
 
 class JSONComponent : public IComposite {
 	std::string _key;
@@ -23,8 +23,9 @@ public:
 		: _key{ key } {}
 
 	/* Methods */
-	void AddChild( JSONComponent child );
-	std::string Print( int depth );
+	void AddChild( IComposite& child ) override;
+	std::string Print( int depth ) override;
+	std::string to_string() override { return "JSONComponent"; }
 };
 
 #endif // !__JSONCOMPONENT__HPP

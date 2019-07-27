@@ -14,6 +14,8 @@ public:
 	virtual void BuildBranch() = 0;
 	virtual void BuildLeaf() = 0;
 	virtual void CloseBranch() = 0;
+
+	virtual ~IDirector() {}
 };
 
 #endif // !__IDIRECTOR__HPP

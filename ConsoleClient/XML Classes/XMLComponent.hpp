@@ -11,7 +11,7 @@
 #include <string>
 #include <list>
 
-#include "IComposite.hpp"
+#include "..\IComposite.hpp"
 
 class XMLComponent : public IComposite {
 	std::string _key;
@@ -23,7 +23,7 @@ public:
 		: _key{ key } {}
 
 	/* Methods */
-	void AddChild( XMLComponent child );
+	void AddChild( IComposite& child );
 	std::string Print( int depth );
 };
 

@@ -127,24 +127,24 @@
     <ClInclude Include="IBuilder.hpp" />
     <ClInclude Include="IComposite.hpp" />
     <ClInclude Include="IDirector.hpp" />
-    <ClInclude Include="JSONBuilder.hpp" />
-    <ClInclude Include="JSONComponent.hpp" />
-    <ClInclude Include="JSONLeaf.hpp" />
+    <ClInclude Include="JSON Classes\JSONBuilder.hpp" />
+    <ClInclude Include="JSON Classes\JSONComponent.hpp" />
+    <ClInclude Include="JSON Classes\JSONLeaf.hpp" />
     <ClInclude Include="UserConsole.hpp" />
-    <ClInclude Include="XMLBuilder.hpp" />
-    <ClInclude Include="XMLComponent.hpp" />
-    <ClInclude Include="XMLLeaf.hpp" />
+    <ClInclude Include="XML Classes\XMLBuilder.hpp" />
+    <ClInclude Include="XML Classes\XMLComponent.hpp" />
+    <ClInclude Include="XML Classes\XMLLeaf.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleClient_main.cpp" />
     <ClCompile Include="Director.cpp" />
-    <ClCompile Include="JSONBuilder.cpp" />
-    <ClCompile Include="JSONComponent.cpp" />
-    <ClCompile Include="JSONLeaf.cpp" />
+    <ClCompile Include="JSON Classes\JSONBuilder.cpp" />
+    <ClCompile Include="JSON Classes\JSONComponent.cpp" />
+    <ClCompile Include="JSON Classes\JSONLeaf.cpp" />
     <ClCompile Include="UserConsole.cpp" />
-    <ClCompile Include="XMLBuilder.cpp" />
-    <ClCompile Include="XMLComponent.cpp" />
-    <ClCompile Include="XMLLeaf.cpp" />
+    <ClCompile Include="XML Classes\XMLBuilder.cpp" />
+    <ClCompile Include="XML Classes\XMLComponent.cpp" />
+    <ClCompile Include="XML Classes\XMLLeaf.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

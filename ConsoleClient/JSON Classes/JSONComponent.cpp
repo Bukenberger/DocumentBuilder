@@ -7,7 +7,7 @@
 
 #include "JSONComponent.hpp"
 
-void JSONComponent::AddChild( JSONComponent child ) {
+void JSONComponent::AddChild( IComposite& child ) {
 	_children.push_back( child );
 } // end AddChild()
 

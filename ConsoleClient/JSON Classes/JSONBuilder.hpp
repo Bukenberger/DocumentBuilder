@@ -11,7 +11,7 @@
 #include <string>
 #include <stack>
 
-#include "IBuilder.hpp"
+#include "..\IBuilder.hpp"
 #include "JSONComponent.hpp"
 #include "JSONLeaf.hpp"
 
@@ -30,6 +30,7 @@ public:
 	void BuildLeaf( std::string name, std::string content ) override;
 	void CloseBranch() override;
 	IComposite GetDocument() override;
+
 };
 
 #endif // !__JSONBUILDER__HPP
