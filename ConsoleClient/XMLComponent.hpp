@@ -8,10 +8,10 @@
 #ifndef __XMLCOMPONENT__HPP
 #define __XMLCOMPONENT__HPP
 
-#include "IComposite.hpp"
-
 #include <string>
 #include <list>
+
+#include "IComposite.hpp"
 
 class XMLComponent : public IComposite {
 	std::string _key;

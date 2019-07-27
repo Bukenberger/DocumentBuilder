@@ -8,9 +8,9 @@
 #ifndef __IBUILDER__HPP
 #define __IBUILDER__HPP
 
-#include "IComposite.hpp"
-
 #include <string>
+
+#include "IComposite.hpp"
 
 class IBuilder {
 public:

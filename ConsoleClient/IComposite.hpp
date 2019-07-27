@@ -14,7 +14,7 @@ class IComposite {
 public:
 	// virtual functions
 	virtual void AddChild( IComposite composite ) {}
-	virtual std::string Print( int depth ) {};
+	virtual std::string Print( int depth ) { return ""; }
 };
 
 #endif // !__ICOMPOSITE__HPP

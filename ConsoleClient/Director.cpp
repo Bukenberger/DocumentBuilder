@@ -1,3 +1,10 @@
+/*
+	@file: Director.cpp
+	@author: Teran Bukenberger
+	@date: 2019-07-27
+	@description: Implementation for Director
+*/
+
 #include "Director.hpp"
 
 #include <iostream>
@@ -17,6 +24,7 @@ void Director::BuildLeaf() {
 }
 
 /***** Setters ******/
+
 void Director::CloseBranch() {
 	_builder.CloseBranch();
 }

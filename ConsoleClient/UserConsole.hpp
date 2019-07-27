@@ -15,14 +15,14 @@
 
 class UserConsole {
 	/***** PRIVATE DATA MEMBERS ******/
-	static std::string _branch;
-	static std::pair< std::string, std::string > _leaf;
+	std::string _branch;
+	std::pair< std::string, std::string > _leaf;
 
 public:
 	/***** GETTERS & SETTERS ******/
 
-	std::string& GetBranch() const;
-	std::pair< std::string, std::string >& GetLeaf() const;
+	std::string GetBranch() const;
+	std::pair< std::string, std::string > GetLeaf() const;
 
 	void SetBranch( const std::vector< std::string >& props );
 	void SetLeaf( const std::vector< std::string >& props );

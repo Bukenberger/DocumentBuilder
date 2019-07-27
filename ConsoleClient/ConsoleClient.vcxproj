@@ -127,13 +127,20 @@
     <ClInclude Include="IBuilder.hpp" />
     <ClInclude Include="IComposite.hpp" />
     <ClInclude Include="IDirector.hpp" />
+    <ClInclude Include="JSONBuilder.hpp" />
+    <ClInclude Include="JSONComponent.hpp" />
+    <ClInclude Include="JSONLeaf.hpp" />
     <ClInclude Include="UserConsole.hpp" />
     <ClInclude Include="XMLBuilder.hpp" />
     <ClInclude Include="XMLComponent.hpp" />
     <ClInclude Include="XMLLeaf.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleClient_main.cpp" />
     <ClCompile Include="Director.cpp" />
+    <ClCompile Include="JSONBuilder.cpp" />
+    <ClCompile Include="JSONComponent.cpp" />
+    <ClCompile Include="JSONLeaf.cpp" />
     <ClCompile Include="UserConsole.cpp" />
     <ClCompile Include="XMLBuilder.cpp" />
     <ClCompile Include="XMLComponent.cpp" />

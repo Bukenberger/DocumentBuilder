@@ -8,12 +8,12 @@
 #ifndef __XMLBUILDER__HPP
 #define __XMLBUILDER__HPP
 
+#include <string>
+#include <stack>
+
 #include "IBuilder.hpp"
 #include "XMLComponent.hpp"
 #include "XMLLeaf.hpp"
-
-#include <string>
-#include <stack>
 
 class XMLBuilder : public IBuilder {
 	int _depth = 0;
@@ -26,26 +26,10 @@ public:
 		_stack.push( _root );
 	}
 
-	void BuildBranch( std::string name ) {
-		XMLComponent component( name );
-		_depth++;
-
-		_stack.top().AddChild( component );
-		_stack.push( component );
-	}
-	void BuildLeaf( std::string name, std::string content ) {
-		XMLLeaf leaf( name, content );
-		_stack.top().AddChild( leaf );
-	}
-	void CloseBranch() {
-		_depth--;
-		if (_stack.size() > 1) {
-			_stack.pop();
-		}
-	}
-	IComposite GetDocument() {
-		return _root;
-	}
+	void BuildBranch( std::string name );
+	void BuildLeaf( std::string name, std::string content );
+	void CloseBranch();
+	IComposite GetDocument();
 };
 
 #endif // !__XMLBUILDER__HPP

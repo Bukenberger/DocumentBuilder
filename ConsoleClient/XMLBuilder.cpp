@@ -7,13 +7,6 @@
 
 #include "XMLBuilder.hpp"
 
-#include <string>
-
-XMLBuilder::XMLBuilder()
-	: _root{ XMLComponent( "root" ) } {
-	_stack.push( _root );
-}
-
 void XMLBuilder::BuildBranch( std::string name ) {
 	XMLComponent component( name );
 	_depth++;

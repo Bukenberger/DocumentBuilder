@@ -1,11 +1,18 @@
+/*
+	@file: UserConsole.cpp
+	@author: Teran Bukenberger
+	@date: 2019-07-27
+	@description: Implementation for UserConsole
+*/
+
 #include "UserConsole.hpp"
 
 /* Getters */
-std::string& UserConsole::GetBranch() const { 
-	return _branch; 
+std::string UserConsole::GetBranch() const { 
+	return _branch;
 }
 
-std::pair< std::string, std::string >& UserConsole::GetLeaf() const { 
+std::pair< std::string, std::string > UserConsole::GetLeaf() const { 
 	return _leaf; 
 }
 

@@ -45,6 +45,15 @@
     <ClInclude Include="XMLLeaf.hpp">
       <Filter>XML</Filter>
     </ClInclude>
+    <ClInclude Include="JSONBuilder.hpp">
+      <Filter>JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONLeaf.hpp">
+      <Filter>JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONComponent.hpp">
+      <Filter>JSON</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Director.cpp">
@@ -61,6 +70,18 @@
     </ClCompile>
     <ClCompile Include="XMLComponent.cpp">
       <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONBuilder.cpp">
+      <Filter>JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONLeaf.cpp">
+      <Filter>JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONComponent.cpp">
+      <Filter>JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleClient_main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
