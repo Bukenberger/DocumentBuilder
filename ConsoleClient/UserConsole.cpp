@@ -9,6 +9,12 @@
 
 #include <string>
 
+/* Current issue - GetBranch method is not being called, it can be assumed it is the same for the other functions */
+
+// static data members
+std::string UserConsole::_branch;
+std::pair< std::string, std::string > UserConsole::_leaf;
+
 // copy assignment operator
 UserConsole& UserConsole::operator=( const UserConsole& con ) {
 	_branch = con._branch;

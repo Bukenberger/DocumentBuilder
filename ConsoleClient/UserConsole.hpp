@@ -15,8 +15,8 @@
 
 class UserConsole {
 	/***** PRIVATE DATA MEMBERS ******/
-	std::string _branch;
-	std::pair< std::string, std::string > _leaf;
+	static std::string _branch;
+	static std::pair< std::string, std::string > _leaf;
 
 public:
 	/***** CONSTRUCTORS *****/
