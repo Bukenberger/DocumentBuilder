@@ -1,3 +1,3 @@
 # XML/JSON Builder
 
-## C++ console app allowing the user to create XML/JSON documents by manually typing the attributes
+## C++ console app allowing the user to create XML/JSON documents
