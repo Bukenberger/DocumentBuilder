@@ -48,3 +48,7 @@ This generates a file called `preview.json` with the following content:
     }
 }
 ```
+
+## Next Steps
+
+The next feature I will be adding, is the ability to add arrays to the file.
