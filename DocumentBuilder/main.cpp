@@ -189,7 +189,7 @@ void WriteToFile( std::string fileContent, std::string fileExtension ) {
 	std::string fileName;
 
 	for (;;) {
-		std::cin >> fileName;
+		getline(std::cin, fileName);
 		if (!fileName.empty())
 			break;
 		else
