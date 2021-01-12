@@ -5,31 +5,31 @@
 	@description: Header for the XMLBuilder
 */
 
-#ifndef __XMLBUILDER__HPP
-#define __XMLBUILDER__HPP
+#ifndef _XML_BUILDER_HPP_
+#define _XML_BUILDER_HPP_
 
 #include <string>
 #include <stack>
 
-#include "..\IBuilder.hpp"
+#include "..\AbstractBuilder.hpp"
 #include "XMLComponent.hpp"
 #include "XMLLeaf.hpp"
 
-class XMLBuilder : public IBuilder {
+class XMLBuilder : public AbstractBuilder {
 	int _depth = 0;
-	std::stack<IComposite> _stack;
-	IComposite _root;
+	std::stack<AbstractComposite*> _stack;
+	XMLComponent* _root;
 
 public:
 	XMLBuilder()
-		: _root{ XMLComponent( "root" ) } {
+		: _root{ new XMLComponent( "root" ) } {
 		_stack.push( _root );
 	}
 
 	void BuildBranch( std::string name ) override;
 	void BuildLeaf( std::string name, std::string content ) override;
 	void CloseBranch() override;
-	IComposite GetDocument() override;
+	AbstractComposite* GetDocument() override;
 };
 
-#endif // !__XMLBUILDER__HPP
+#endif // !_XML_BUILDER_HPP_

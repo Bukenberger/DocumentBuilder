@@ -7,7 +7,7 @@
 
 #include "XMLComponent.hpp"
 
-void XMLComponent::AddChild( IComposite& child ) {
+void XMLComponent::AddChild( AbstractComposite* child ) {
 	_children.push_back( child );
 } // end AddChild()
 
@@ -25,7 +25,7 @@ std::string XMLComponent::Print( int depth ) {
 	std::string text = space + "<" + _key + ">\n";
 
 	for (auto child : _children) {
-		text += child.Print( depth + 1 ) + "\n";
+		text += child->Print( depth + 1 ) + "\n";
 	}
 
 	text += space + "</" + _key + ">";

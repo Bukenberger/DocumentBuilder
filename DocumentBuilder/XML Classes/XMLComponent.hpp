@@ -5,17 +5,17 @@
 	@description: Header for the XMLComponent
 */
 
-#ifndef __XMLCOMPONENT__HPP
-#define __XMLCOMPONENT__HPP
+#ifndef _XML_COMPONENT_HPP_
+#define _XML_COMPONENT_HPP_
 
 #include <string>
-#include <list>
+#include <vector>
 
-#include "..\IComposite.hpp"
+#include "..\AbstractComposite.hpp"
 
-class XMLComponent : public IComposite {
+class XMLComponent : public AbstractComposite {
 	std::string _key;
-	std::list< IComposite > _children;
+	std::vector<AbstractComposite*> _children;
 
 public:
 	/* Constructor */
@@ -23,9 +23,9 @@ public:
 		: _key{ key } {}
 
 	/* Methods */
-	void AddChild( IComposite& child );
+	void AddChild( AbstractComposite* child );
 	std::string Print( int depth );
 };
 
-#endif // !__XMLCOMPONENT__HPP
+#endif // !_XML_COMPONENT_HPP_
 

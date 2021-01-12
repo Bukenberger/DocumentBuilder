@@ -9,11 +9,9 @@
 
 #include <string>
 
-/* Current issue - GetBranch method is not being called, it can be assumed it is the same for the other functions */
-
 // static data members
 std::string UserConsole::_branch;
-std::pair< std::string, std::string > UserConsole::_leaf;
+std::pair<std::string, std::string> UserConsole::_leaf;
 
 // copy assignment operator
 UserConsole& UserConsole::operator=( const UserConsole& con ) {
@@ -38,5 +36,5 @@ void UserConsole::SetBranch( const std::vector< std::string >& props ) {
 }
 
 void UserConsole::SetLeaf( const std::vector< std::string >& props ) { 
-	_leaf = std::pair< std::string, std::string >( props[1], props[2] ); 
+	_leaf = std::pair<std::string, std::string>( props[1], props[2] ); 
 }

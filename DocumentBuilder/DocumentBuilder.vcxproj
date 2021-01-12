@@ -21,8 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{2BA3010C-AA9C-467C-B5CB-36C8D5FC4E08}</ProjectGuid>
-    <RootNamespace>ConsoleClient</RootNamespace>
+    <RootNamespace>DocumentBuilder</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DocumentBuilder</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -124,9 +125,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Director.hpp" />
-    <ClInclude Include="IBuilder.hpp" />
-    <ClInclude Include="IComposite.hpp" />
-    <ClInclude Include="IDirector.hpp" />
+    <ClInclude Include="AbstractBuilder.hpp" />
+    <ClInclude Include="AbstractComposite.hpp" />
+    <ClInclude Include="AbstractDirector.hpp" />
     <ClInclude Include="JSON Classes\JSONBuilder.hpp" />
     <ClInclude Include="JSON Classes\JSONComponent.hpp" />
     <ClInclude Include="JSON Classes\JSONLeaf.hpp" />
@@ -136,7 +137,7 @@
     <ClInclude Include="XML Classes\XMLLeaf.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleClient_main.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="JSON Classes\JSONBuilder.cpp" />
     <ClCompile Include="JSON Classes\JSONComponent.cpp" />

@@ -5,14 +5,14 @@
 	@description: JSONLeaf header
 */
 
-#ifndef __JSONLEAF__HPP
-#define __JSONLEAF__HPP
+#ifndef _JSON_LEAF_HPP_
+#define _JSON_LEAF_HPP_
 
 #include <string>
 
-#include "..\IComposite.hpp"
+#include "..\AbstractComposite.hpp"
 
-class JSONLeaf : public IComposite {
+class JSONLeaf : public AbstractComposite {
 	std::string _key;
 	std::string _value;
 
@@ -23,7 +23,7 @@ public:
 
 	std::string Print( int depth );
 
-	// void AddChild( IComposite child ) {} // not used for the leaf, since leaves do not have children
+	 void AddChild( AbstractComposite* child ) {} // not used for the leaf, since leaves do not have children
 };
 
-#endif // !__JSONLEAF__HPP
+#endif // !_JSON_LEAF_HPP_

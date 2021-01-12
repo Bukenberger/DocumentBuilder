@@ -5,14 +5,14 @@
 	@description: XMLLeaf header
 */
 
-#ifndef __XMLLEAF__HPP
-#define __XMLLEAF__HPP
+#ifndef _XML_LEAF_HPP_
+#define _XML_LEAF_HPP_
 
 #include <string>
 
-#include "..\IComposite.hpp"
+#include "..\AbstractComposite.hpp"
 
-class XMLLeaf : public IComposite {
+class XMLLeaf : public AbstractComposite {
 	std::string _key;
 	std::string _value;
 
@@ -23,7 +23,7 @@ public:
 
 	std::string Print( int depth );
 
-	// void AddChild( IComposite child ) {} // not used for the leaf, since leaves do not have children
+	 void AddChild( AbstractComposite* child ) {} // not used for the leaf, since leaves do not have children
 };
 
-#endif // !__XMLLEAF__HPP
+#endif // !_XML_LEAF_HPP_

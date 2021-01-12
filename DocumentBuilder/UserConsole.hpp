@@ -7,8 +7,8 @@
 				  The purpose of this class is to store user input from the console.
 */
 
-#ifndef __USERCONSOLE__HPP
-#define __USERCONSOLE__HPP
+#ifndef _USER_CONSOLE_HPP_
+#define _USER_CONSOLE_HPP_
 
 #include <string>
 #include <vector>
@@ -34,4 +34,4 @@ public:
 
 }; // end class
 
-#endif // !__USERCONSOLE__HPP
+#endif // !_USER_CONSOLE_HPP_

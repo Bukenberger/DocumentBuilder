@@ -1,12 +1,12 @@
 /*
-	@file: ConsoleClient_main.cpp
+	@file: main.cpp
 	@author: Teran Bukenberger
 	@date: 2019-07-27
-	@description: 
+	@description: launches the application
 */
 
 #ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS // to use strtok instead of strtok_s
 
 // C System libraries
 #include <stdio.h>
@@ -17,9 +17,10 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <fstream>
 
 // Headers
-#include "IBuilder.hpp"
+#include "AbstractBuilder.hpp"
 #include "UserConsole.hpp"
 #include "Director.hpp"
 #include "JSON Classes\JSONBuilder.hpp"
@@ -29,14 +30,18 @@
 void Usage();
 void InvalidInput();
 void ModeNotSet();
-std::vector< std::string > split( std::string str, std::string sep );
+void WriteToFile( std::string fileName, std::string fileExtension );
+std::vector<std::string> split( std::string str, std::string sep );
 
 int main() {
 	std::cout << "Document Builder Console Client - Teran Bukenberger\n";
 
 	UserConsole console;
-
 	Director d;
+
+	// save content when printed
+	std::string fileContent;
+	std::string fileExtension;
 
 	bool isSet = false;
 
@@ -50,10 +55,10 @@ int main() {
 
 		// convert all characters in command string to lowercase
 		std::for_each( command.begin(), command.end(), []( char& c ) {
-			c = ::tolower( c );
+			c = tolower( c );
 		} );
 		
-		std::vector< std::string > _commands = split( command, ":" );
+		std::vector<std::string> _commands = split( command, ":" );
 
 		if (_commands.size() == 1) {
 			if (_commands[0] == "help") {
@@ -78,6 +83,15 @@ int main() {
 					ModeNotSet();
 				}
 			}
+			else if (_commands[0] == "export") {
+				if ( fileExtension.empty() ) {
+					std::cout << "No content to write." << std::endl;
+				}
+				else {
+					fileContent = d.Print();
+					WriteToFile(fileContent, fileExtension);
+				}
+			}
 			else {
 				InvalidInput();
 			}
@@ -85,10 +99,12 @@ int main() {
 		else if (_commands.size() == 2) {
 			if (_commands[0] == "mode") {
 				if (_commands[1] == "json") {
+					fileExtension = ".json";
 					d = Director( new JSONBuilder );
 					isSet = true;
 				}
 				else if (_commands[1] == "xml") {
+					fileExtension = ".xml";
 					d = Director( new XMLBuilder );
 					isSet = true;
 				}
@@ -126,16 +142,6 @@ int main() {
 		else {
 			InvalidInput();
 		}
-
-		/* STUB CODE */
-		std::cout << "Formatted command: " << command << std::endl;
-		if (_commands.size() > 0)
-			std::cout << "First arg: " << _commands[0] << std::endl;
-		if (_commands.size() > 1)
-			std::cout << "Second arg: " << _commands[1] << std::endl;
-		if (_commands.size() > 2)
-			std::cout << "Third arg: " << _commands[2] << std::endl;
-
 	} while (true);
 
 	return 0;
@@ -151,7 +157,8 @@ void Usage() {
 							"leaf:<name>:<content>",
 							"close",
 							"print",
-							"exit"
+							"exit",
+							"export"
 	};
 
 	std::vector< std::string > descriptions = {
@@ -161,7 +168,8 @@ void Usage() {
 								"-Creates a new leaf, assigning the passed name and content.",
 								"-Closes the current branch, as long as it is not the root.",
 								"-Prints the doc in its current state to the console.",
-								"-Exits the application."
+								"-Exits the application.",
+								"-Exports the written document to a file"
 	};
 
 	for (unsigned index = 0; index < options.size(); ++index) {
@@ -175,6 +183,25 @@ void Usage() {
 	}
 	std::cout << "\n";
 } // end Usage()
+
+void WriteToFile( std::string fileContent, std::string fileExtension ) {
+	std::cout << "Enter a file name (without extension): ";
+	std::string fileName;
+
+	for (;;) {
+		std::cin >> fileName;
+		if (!fileName.empty())
+			break;
+		else
+			std::cout << "\nPlease enter a value: " << std::endl;
+	}
+
+	std::cout << "Writing to file...\n" << std::endl;
+	std::ofstream file( fileName + fileExtension );
+	file << fileContent;
+	file.close();
+	std::cout << "Complete." << std::endl;
+}
 
 void InvalidInput() {
 	std::cout << "Invalid input. For Usage, type 'Help'\n";

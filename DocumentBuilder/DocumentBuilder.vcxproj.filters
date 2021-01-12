@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Director.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XML Classes\XMLComponent.cpp">
+      <Filter>Source Files\XML Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="XML Classes\XMLLeaf.cpp">
+      <Filter>Source Files\XML Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="XML Classes\XMLBuilder.cpp">
+      <Filter>Source Files\XML Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="JSON Classes\JSONBuilder.cpp">
+      <Filter>Source Files\JSON Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="JSON Classes\JSONComponent.cpp">
+      <Filter>Source Files\JSON Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="JSON Classes\JSONLeaf.cpp">
+      <Filter>Source Files\JSON Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JSON Classes\JSONBuilder.hpp">
+      <Filter>Include Files\JSON Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="JSON Classes\JSONComponent.hpp">
+      <Filter>Include Files\JSON Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="JSON Classes\JSONLeaf.hpp">
+      <Filter>Include Files\JSON Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="XML Classes\XMLBuilder.hpp">
+      <Filter>Include Files\XML Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="XML Classes\XMLComponent.hpp">
+      <Filter>Include Files\XML Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="XML Classes\XMLLeaf.hpp">
+      <Filter>Include Files\XML Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Director.hpp">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserConsole.hpp">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractDirector.hpp">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractBuilder.hpp">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractComposite.hpp">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{d8b68289-9909-4f65-a11f-a79a10977111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XML Classes">
+      <UniqueIdentifier>{45cc8bc3-1c7b-48bb-be52-902b081555ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JSON Classes">
+      <UniqueIdentifier>{41727590-28db-4572-8616-357fdd59188f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{bf11e512-f2cf-4140-a897-2082510a8169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files\JSON Classes">
+      <UniqueIdentifier>{248099c4-6985-416f-9154-7540a06e334d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files\XML Classes">
+      <UniqueIdentifier>{73a9b3cb-6708-4ffe-83f2-32faac40ab8c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

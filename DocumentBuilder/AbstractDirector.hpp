@@ -5,17 +5,17 @@
 	@description: Base class for the Director class. There is no implementation for this class.
 */
 
-#ifndef __IDIRECTOR__HPP
-#define __IDIRECTOR__HPP
+#ifndef _ABSTRACT_DIRECTOR_HPP_
+#define _ABSTRACT_DIRECTOR_HPP_
 
-class IDirector {
+class AbstractDirector {
 public:
 	// virtual functions
 	virtual void BuildBranch() = 0;
 	virtual void BuildLeaf() = 0;
 	virtual void CloseBranch() = 0;
 
-	virtual ~IDirector() {}
+	virtual ~AbstractDirector() {};
 };
 
-#endif // !__IDIRECTOR__HPP
+#endif // !_ABSTRACT_DIRECTOR_HPP_
