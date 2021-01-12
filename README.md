@@ -3,6 +3,10 @@
 
 DocumentBuilder is a console application which allows a user to generate an XML or JSON document from the command line.
 
+## Goal
+
+My goal when creating this application was to utilize the Composite and Builder software design patterns to generate XML and JSON structures.
+
 ## How to use it
 
 ```
